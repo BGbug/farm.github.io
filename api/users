@@ -1,0 +1,1 @@
+[{"id":1,"name":"Alice Farmer","username":"alicefarm","email":"alice@farm.com","role":"Admin","avatarId":"avatar-1"},{"id":2,"name":"Bob Manager","username":"bobman","email":"bob@farm.com","role":"Manager","avatarId":"avatar-2"},{"id":3,"name":"Charlie Worker","username":"charliework","email":"charlie@farm.com","role":"Farmer","avatarId":"avatar-3"}]
