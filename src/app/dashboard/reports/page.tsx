@@ -20,7 +20,8 @@ import { StatCard } from '@/components/dashboard/stat-card';
 import useSWR from 'swr';
 import { useToast } from '@/hooks/use-toast';
 
-const fetcher = (url: string) => fetch(url).then(res => res.json());
+import { apiFetcher } from '@/lib/api';
+
 
 type EggLog = {
     id: string;
@@ -110,9 +111,9 @@ export default function ReportsPage() {
     const [explorerDataSource, setExplorerDataSource] = useState('');
     const [explorerCategory, setExplorerCategory] = useState('');
 
-    const { data: eggLogs = [], error: eggLogsError, isLoading: eggLogsLoading } = useSWR<EggLog[]>('/api/egg-logs', fetcher);
-    const { data: transactions = [], error: transactionsError, isLoading: transactionsLoading } = useSWR<Transaction[]>('/api/transactions', fetcher);
-    const { data: livestock = [], error: livestockError, isLoading: livestockLoading } = useSWR<Animal[]>('/api/livestock', fetcher);
+    const { data: eggLogs = [], error: eggLogsError, isLoading: eggLogsLoading } = useSWR<EggLog[]>('/api/egg-logs', apiFetcher);
+    const { data: transactions = [], error: transactionsError, isLoading: transactionsLoading } = useSWR<Transaction[]>('/api/transactions', apiFetcher);
+    const { data: livestock = [], error: livestockError, isLoading: livestockLoading } = useSWR<Animal[]>('/api/livestock', apiFetcher);
     
     const [isBackingUp, setIsBackingUp] = useState(false);
 

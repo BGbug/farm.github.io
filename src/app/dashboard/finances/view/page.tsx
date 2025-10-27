@@ -14,7 +14,8 @@ import { cn } from '@/lib/utils';
 import { DateRange } from 'react-day-picker';
 import useSWR from 'swr';
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+import { apiFetcher } from '@/lib/api';
+
 
 type Transaction = {
   id: string;
@@ -29,7 +30,7 @@ type Transaction = {
 export default function ViewFinancesPage() {
   const [filter, setFilter] = useState('all');
   const [dateRange, setDateRange] = useState<DateRange | undefined>();
-  const { data: transactions = [], error, isLoading } = useSWR<Transaction[]>('/api/transactions', fetcher);
+  const { data: transactions = [], error, isLoading } = useSWR<Transaction[]>('/api/transactions', apiFetcher);
 
   const filteredTransactions = useMemo(() => {
     let startDate: Date | undefined;

@@ -1,0 +1,29 @@
+
+{
+  "harvests": [
+    {
+      "id": "HARV-1",
+      "date": "2024-06-15",
+      "item": "Wheat",
+      "type": "Crop",
+      "quantity": 50,
+      "unit": "quintal",
+      "notes": "Excellent quality, low moisture.",
+      "sold": true,
+      "saleDetails": {
+        "pricePerUnit": 2200,
+        "totalRevenue": 110000
+      }
+    },
+    {
+      "id": "HARV-2",
+      "date": "2024-07-20",
+      "item": "Eggs",
+      "type": "Eggs",
+      "quantity": 4,
+      "unit": "dozen",
+      "notes": "Collected from layer chickens",
+      "sold": false
+    }
+  ]
+}

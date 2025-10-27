@@ -1,0 +1,10 @@
+
+{
+  "transactions": [
+    { "id": "TXN-1", "category": "Seeds", "amount": 1200, "date": "2024-04-10T00:00:00Z", "description": "Corn seeds for North Paddock", "type": "expense", "createdAt": "2024-04-10T00:00:00Z" },
+    { "id": "TXN-2", "category": "Fertilizers", "amount": 800, "date": "2024-05-15T00:00:00Z", "description": "NPK fertilizer for all fields", "type": "expense", "createdAt": "2024-05-15T00:00:00Z" },
+    { "id": "TXN-3", "category": "Livestock Sale", "amount": 1500, "date": "2024-06-01T00:00:00Z", "description": "Sold 2 Boer goats", "type": "revenue", "createdAt": "2024-06-01T00:00:00Z" },
+    { "id": "TXN-4", "category": "Labor", "amount": 2500, "date": "2024-06-30T00:00:00Z", "description": "June salaries", "type": "expense", "createdAt": "2024-06-30T00:00:00Z" },
+    { "id": "TXN-5", "category": "Feeds", "amount": 600, "date": "2024-07-05T00:00:00Z", "description": "Chicken and cow feed", "type": "expense", "createdAt": "2024-07-05T00:00:00Z" }
+  ]
+}

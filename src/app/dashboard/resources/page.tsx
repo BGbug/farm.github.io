@@ -14,13 +14,14 @@ import { useToast } from "@/hooks/use-toast"
 import { mutate } from 'swr';
 import useSWR from 'swr';
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+import { apiFetcher } from '@/lib/api';
+
 
 const animalTypes = ["Cow", "Buffalo", "Goat", "Chicken", "Sheep"];
 
 export default function ResourcesPage() {
   const { toast } = useToast();
-  const { data: fields = [], error: fieldsError, isLoading: fieldsLoading } = useSWR<any[]>('/api/fields', fetcher);
+  const { data: fields = [], error: fieldsError, isLoading: fieldsLoading } = useSWR<any[]>('/api/fields', apiFetcher);
   const [usageFor, setUsageFor] = useState<"field" | "livestock" | "">("");
 
   const handleLogResource = async (e: React.FormEvent<HTMLFormElement>) => {

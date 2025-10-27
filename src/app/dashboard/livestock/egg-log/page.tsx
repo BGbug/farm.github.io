@@ -15,7 +15,8 @@ import { CalendarIcon, PlusCircle, Egg } from "lucide-react";
 import { cn } from "@/lib/utils";
 import useSWR, { mutate } from 'swr';
 
-const fetcher = (url: string) => fetch(url).then(res => res.json());
+import { apiFetcher } from '@/lib/api';
+
 
 type EggLog = {
     id: string;
@@ -38,7 +39,7 @@ export default function EggLogPage() {
         notes: ""
     });
 
-    const { data: eggLogs = [], error, isLoading } = useSWR<EggLog[]>('/api/egg-logs', fetcher);
+    const { data: eggLogs = [], error, isLoading } = useSWR<EggLog[]>('/api/egg-logs', apiFetcher);
 
     const handleFieldChange = (field: keyof NewEggLog, value: any) => {
         setNewLog(prev => ({ ...prev, [field]: value }));

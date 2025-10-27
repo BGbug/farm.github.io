@@ -19,8 +19,7 @@ import { Switch } from '@/components/ui/switch';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { ChevronDown } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
-
-const fetcher = (url: string) => fetch(url).then(res => res.json());
+import { apiFetcher } from '@/lib/api';
 
 type HarvestLog = {
     id: string;
@@ -63,7 +62,7 @@ export default function HarvestLogPage() {
         sold: false,
     });
 
-    const { data: harvestLogs = [], error, isLoading } = useSWR<HarvestLog[]>('/api/harvests', fetcher);
+    const { data: harvestLogs = [], error, isLoading } = useSWR<HarvestLog[]>('/api/harvests', apiFetcher);
 
     const handleFieldChange = (field: keyof NewHarvestLog, value: any) => {
         setNewLog(prev => ({ ...prev, [field]: value }));

@@ -20,7 +20,8 @@ import { format, formatDistanceToNow } from "date-fns"
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog"
 import { Separator } from "@/components/ui/separator"
 
-const fetcher = (url: string) => fetch(url).then(res => res.json());
+import { apiFetcher } from '@/lib/api';
+
 
 type User = {
   id: number;
@@ -60,8 +61,8 @@ const currencies = [
 
 export default function SettingsPage() {
   const { toast } = useToast();
-  const { data: users = [], error: usersError, mutate: mutateUsers } = useSWR<User[]>('/api/users', fetcher);
-  const { data: backupHistory = [], error: backupHistoryError, mutate: mutateBackupHistory } = useSWR<BackupHistory[]>('/api/backup-history', fetcher);
+  const { data: users = [], error: usersError, mutate: mutateUsers } = useSWR<User[]>('/api/users', apiFetcher);
+  const { data: backupHistory = [], error: backupHistoryError, mutate: mutateBackupHistory } = useSWR<BackupHistory[]>('/api/backup-history', apiFetcher);
   
   const [editingUser, setEditingUser] = useState<User | null>(null);
   const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);

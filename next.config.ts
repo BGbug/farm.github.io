@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   output: 'export',
   basePath: '/farm.github.io',
   assetPrefix: '/farm.github.io/',
+  env: {
+    NEXT_PUBLIC_BASE_PATH: '/farm.github.io',
+  },
   typescript: {
     ignoreBuildErrors: true,
   },

@@ -11,7 +11,8 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import useSWR from 'swr';
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+import { apiFetcher } from '@/lib/api';
+
 
 type Field = {
   id: string;
@@ -23,7 +24,7 @@ type Field = {
 
 export default function FieldsPage() {
   const mapImage = PlaceHolderImages.find(p => p.id === 'map-placeholder');
-  const { data: fields, error, isLoading } = useSWR<Field[]>('/api/fields', fetcher);
+  const { data: fields, error, isLoading } = useSWR<Field[]>('/api/fields', apiFetcher);
 
   if (error) return <div>Failed to load fields</div>;
 

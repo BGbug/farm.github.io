@@ -12,7 +12,8 @@ import { Pie, PieChart, Cell } from "recharts";
 import useSWR from 'swr';
 import { format } from 'date-fns';
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+import { apiFetcher } from '@/lib/api';
+
 
 type Transaction = {
   id: string;
@@ -65,10 +66,10 @@ const chartConfig = {
 
 
 export default function DashboardPage() {
-  const { data: transactions = [], error: transactionsError } = useSWR<Transaction[]>('/api/transactions', fetcher);
-  const { data: livestock = [], error: livestockError } = useSWR<Livestock[]>('/api/livestock', fetcher);
-  const { data: recentActivities = [], error: activitiesError } = useSWR<Activity[]>('/api/recent-activities', fetcher);
-  const { data: cropsData = [], error: cropsError } = useSWR<any[]>('/api/fields', fetcher);
+  const { data: transactions = [], error: transactionsError } = useSWR<Transaction[]>('/api/transactions', apiFetcher);
+  const { data: livestock = [], error: livestockError } = useSWR<Livestock[]>('/api/livestock', apiFetcher);
+  const { data: recentActivities = [], error: activitiesError } = useSWR<Activity[]>('/api/recent-activities', apiFetcher);
+  const { data: cropsData = [], error: cropsError } = useSWR<any[]>('/api/fields', apiFetcher);
 
   const chartData = useMemo(() => {
     const cropAreas = cropsData.reduce((acc: any, field: any) => {

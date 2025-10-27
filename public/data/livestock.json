@@ -1,0 +1,11 @@
+
+{
+  "livestock": [
+    { "id": "COW-001", "type": "Cow", "breed": "Holstein", "gender": "Female", "dob": "2020-03-15", "status": "Healthy", "purpose": "Dairy" },
+    { "id": "GOA-001", "type": "Goat", "breed": "Boer", "gender": "Male", "dob": "2022-08-20", "status": "Needs Vaccination", "purpose": "For Sale" },
+    { "id": "BUF-001", "type": "Buffalo", "breed": "Murrah", "gender": "Female", "dob": "2019-11-10", "status": "Healthy", "purpose": "Dairy" },
+    { "id": "CHI-001", "type": "Chicken", "breed": "Broiler", "gender": "Female", "dob": "2024-05-01", "status": "Healthy", "purpose": "Egg Production" },
+    { "id": "COW-002", "type": "Cow", "breed": "Jersey", "gender": "Female", "dob": "2023-12-01", "status": "Healthy", "purpose": "Growing" },
+    { "id": "CHI-002", "type": "Chicken", "breed": "Layer", "gender": "Male", "dob": "2024-05-01", "status": "Healthy", "purpose": "For Sale" }
+  ]
+}

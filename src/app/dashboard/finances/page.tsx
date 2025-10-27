@@ -19,7 +19,8 @@ import Link from "next/link"
 import useSWR, { mutate } from 'swr';
 import { format } from "date-fns";
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+import { apiFetcher } from '@/lib/api';
+
 
 const chartConfig: ChartConfig = {
   amount: {
@@ -89,7 +90,7 @@ export default function FinancesPage() {
   const [isAddExpenseOpen, setIsAddExpenseOpen] = useState(false);
   const [newTransaction, setNewTransaction] = useState<Partial<NewTransaction>>({ category: 'Other', amount: 0, description: '', date: new Date().toISOString().split('T')[0], type: 'expense'});
 
-  const { data: transactions = [], error, isLoading } = useSWR<Transaction[]>('/api/transactions', fetcher);
+  const { data: transactions = [], error, isLoading } = useSWR<Transaction[]>('/api/transactions', apiFetcher);
 
   const totalBudget = 100000;
   

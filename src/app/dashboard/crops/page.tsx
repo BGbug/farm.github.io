@@ -18,8 +18,7 @@ import { cn } from "@/lib/utils"
 import { format, addDays } from "date-fns"
 import { useToast } from "@/hooks/use-toast";
 import useSWR, { mutate } from 'swr';
-
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+import { apiFetcher } from '@/lib/api';
 
 type Crop = { 
   id: string; 
@@ -44,8 +43,8 @@ export default function CropsPage() {
     plantedOn: new Date().toISOString().split('T')[0],
   });
 
-  const { data: crops = [], error: cropsError, isLoading: cropsLoading } = useSWR<Crop[]>('/api/crops', fetcher);
-  const { data: fields = [], error: fieldsError, isLoading: fieldsLoading } = useSWR<Field[]>('/api/fields', fetcher);
+  const { data: crops = [], error: cropsError, isLoading: cropsLoading } = useSWR<Crop[]>('/api/crops', apiFetcher);
+  const { data: fields = [], error: fieldsError, isLoading: fieldsLoading } = useSWR<Field[]>('/api/fields', apiFetcher);
 
 
   const handleFieldChange = (field: keyof typeof newCrop, value: string | Date | undefined) => {

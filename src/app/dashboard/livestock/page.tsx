@@ -16,7 +16,8 @@ import { format, differenceInMonths, differenceInYears } from "date-fns";
 import Link from 'next/link';
 import useSWR, { mutate } from 'swr';
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+import { apiFetcher } from '@/lib/api';
+
 
 type Animal = {
   id: string;
@@ -36,7 +37,7 @@ const PURPOSES = ["Dairy", "Meat", "Egg Production", "Breeding", "For Sale", "Gr
 
 export default function LivestockPage() {
   const { toast } = useToast();
-  const { data: livestock = [], error, isLoading } = useSWR<Animal[]>('/api/livestock', fetcher);
+  const { data: livestock = [], error, isLoading } = useSWR<Animal[]>('/api/livestock', apiFetcher);
   
   const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
   const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
