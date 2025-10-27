@@ -1,0 +1,34 @@
+{
+  "placeholderImages": [
+    {
+      "id": "logo",
+      "description": "FarmFlow application logo",
+      "imageUrl": "https://images.unsplash.com/photo-1693666731851-993c9e760781?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxsZWFmJTIwbG9nb3xlbnwwfHx8fDE3NTkzOTY0ODJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "leaf logo"
+    },
+    {
+      "id": "avatar-1",
+      "description": "User avatar for Alice",
+      "imageUrl": "https://images.unsplash.com/photo-1582563556319-381ad4504ed9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGZhcm1lcnxlbnwwfHx8fDE3NTk0NzE0NjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman farmer"
+    },
+    {
+      "id": "avatar-2",
+      "description": "User avatar for Bob",
+      "imageUrl": "https://images.unsplash.com/photo-1628492058844-589eb5dc6a35?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtYW4lMjBmYXJtZXJ8ZW58MHx8fHwxNzU5Mzk1MDQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man farmer"
+    },
+    {
+      "id": "avatar-3",
+      "description": "User avatar for Charlie",
+      "imageUrl": "https://images.unsplash.com/photo-1740477138822-906f6b845579?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxmYXJtZXIlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTk0NjQzNTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "farmer portrait"
+    },
+    {
+      "id": "map-placeholder",
+      "description": "Placeholder for a geolocation map of farm fields",
+      "imageUrl": "https://images.unsplash.com/photo-1545292470-391a7b77b8a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxmYXJtJTIwYWVyaWFsfGVufDB8fHx8MTc1OTQ4NTk1Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "farm aerial"
+    }
+  ]
+}
