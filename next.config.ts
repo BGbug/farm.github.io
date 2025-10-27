@@ -2,6 +2,9 @@ import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
   /* config options here */
+  output: 'export',
+  basePath: '/farm.github.io',
+  assetPrefix: '/farm.github.io/',
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -9,6 +12,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
