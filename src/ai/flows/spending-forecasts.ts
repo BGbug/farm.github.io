@@ -1,4 +1,4 @@
-'use server';
+// 'use server'; // Disabled for static export
 
 /**
  * @fileOverview Spending forecast AI agent.

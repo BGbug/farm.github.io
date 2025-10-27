@@ -34,6 +34,26 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        net: false,
+        tls: false,
+        dns: false,
+        child_process: false,
+      };
+    }
+    // Ignore genkit and AI-related modules during client-side build
+    config.externals = config.externals || [];
+    config.externals.push({
+      'genkit': 'commonjs genkit',
+      '@genkit-ai/core': 'commonjs @genkit-ai/core',
+      '@genkit-ai/google-genai': 'commonjs @genkit-ai/google-genai',
+    });
+    return config;
+  },
 };
 
 export default nextConfig;

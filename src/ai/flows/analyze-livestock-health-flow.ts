@@ -1,5 +1,5 @@
 
-'use server';
+// 'use server'; // Disabled for static export
 
 /**
  * @fileOverview AI agent for analyzing livestock health from a video frame.

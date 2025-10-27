@@ -1,5 +1,5 @@
 
-'use server';
+// 'use server'; // Disabled for static export
 
 /**
  * @fileOverview A plant problem diagnosis AI agent.

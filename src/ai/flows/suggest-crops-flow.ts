@@ -1,5 +1,5 @@
 
-'use server';
+// 'use server'; // Disabled for static export
 
 /**
  * @fileOverview AI agent for suggesting crops based on environmental factors.

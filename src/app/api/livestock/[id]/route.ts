@@ -3,6 +3,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import path from 'path';
 import fs from 'fs/promises';
 
+export const dynamic = 'force-static';
+
 const dataFilePath = path.join(process.cwd(), 'src/data/livestock.json');
 
 async function readData() {
@@ -12,6 +14,13 @@ async function readData() {
     } catch (error) {
         return { livestock: [] };
     }
+}
+
+export async function generateStaticParams() {
+    const data = await readData();
+    return data.livestock.map((animal: any) => ({
+        id: animal.id,
+    }));
 }
 
 async function writeData(data: any) {

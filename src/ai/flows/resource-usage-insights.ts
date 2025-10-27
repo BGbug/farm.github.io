@@ -1,4 +1,4 @@
-'use server';
+// 'use server'; // Disabled for static export
 
 /**
  * @fileOverview Provides insights on optimizing resource usage (fertilizer, water) based on historical consumption patterns.

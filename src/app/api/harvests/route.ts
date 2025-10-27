@@ -3,6 +3,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import path from 'path';
 import fs from 'fs/promises';
 
+export const dynamic = 'force-static';
+
 const dataFilePath = path.join(process.cwd(), 'src/data/harvests.json');
 const transactionsFilePath = path.join(process.cwd(), 'src/data/transactions.json');
 

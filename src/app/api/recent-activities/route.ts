@@ -3,6 +3,8 @@ import { NextResponse } from 'next/server';
 import path from 'path';
 import fs from 'fs/promises';
 
+export const dynamic = 'force-static';
+
 const dataFilePath = path.join(process.cwd(), 'src/data/recent-activities.json');
 const initialData = {
   "recentActivities": [

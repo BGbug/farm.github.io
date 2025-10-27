@@ -1,4 +1,10 @@
-
 {
-    "backupHistory": []
+  "backupHistory": [
+    {
+      "id": "BKP-1761567085480",
+      "timestamp": "2025-10-27T12:11:25.364Z",
+      "user": "Alice Farmer",
+      "fileName": "farmflow-backup-2025-10-27T12:11:25.364Z.json"
+    }
+  ]
 }

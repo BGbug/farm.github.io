@@ -1,5 +1,5 @@
 
-'use server';
+// 'use server'; // Disabled for static export
 
 /**
  * @fileOverview AI agent for analyzing and extracting data from an invoice image.
