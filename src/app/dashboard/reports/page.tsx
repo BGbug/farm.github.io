@@ -241,9 +241,15 @@ export default function ReportsPage() {
             default:
                 categories = [];
         }
-        setExplorerCategory('');
         return categories;
     }, [explorerDataSource, dateFilteredData.transactions, livestock]);
+
+    // Handle category reset when data source changes
+    useEffect(() => {
+        if (!explorerDataSource || explorerCategories.length === 0) {
+            setExplorerCategory('');
+        }
+    }, [explorerDataSource, explorerCategories]);
     
     const explorerData = useMemo(() => {
         let data: any[] = [];
@@ -410,7 +416,7 @@ export default function ReportsPage() {
                  <Card className="shadow-lg"><CardHeader><CardTitle>Livestock Distribution</CardTitle><CardDescription>A breakdown of your current livestock by animal type.</CardDescription></CardHeader>
                     <CardContent className="space-y-4">
                         {livestockLoading ? <div className="flex items-center justify-center h-[350px]"><p>Loading livestock data...</p></div> : livestockDistribution.length > 0 ? (<><ChartContainer config={livestockChartConfig} className="mx-auto aspect-square max-h-[350px]">
-                            <PieChart><ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} /><Pie data={livestockDistribution} dataKey="value" nameKey="name" innerRadius={60} strokeWidth={5}>{livestockDistribution.map((entry) => <Cell key={entry.name} fill={entry.fill} />)}</Pie><ChartLegend content={<ChartLegendContent nameKey="name" />} /></ChartContainer><Separator /><div><h4 className="text-sm font-medium mb-2">Data View</h4><Table><TableHeader><TableRow><TableHead>Animal Type</TableHead><TableHead className="text-right">Count</TableHead></TableRow></TableHeader><TableBody>{livestockDistribution.map(item => <TableRow key={item.name}><TableCell className="font-medium">{item.name}</TableCell><TableCell className="text-right">{item.value}</TableCell></TableRow>)}</TableBody></Table></div></>) : (<div className="flex items-center justify-center h-[350px]"><p className="text-muted-foreground">No livestock data available.</p></div>)}
+                            <PieChart><ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} /><Pie data={livestockDistribution} dataKey="value" nameKey="name" innerRadius={60} strokeWidth={5}>{livestockDistribution.map((entry) => <Cell key={entry.name} fill={entry.fill} />)}</Pie><ChartLegend content={<ChartLegendContent nameKey="name" />} /></PieChart></ChartContainer><Separator /><div><h4 className="text-sm font-medium mb-2">Data View</h4><Table><TableHeader><TableRow><TableHead>Animal Type</TableHead><TableHead className="text-right">Count</TableHead></TableRow></TableHeader><TableBody>{livestockDistribution.map(item => <TableRow key={item.name}><TableCell className="font-medium">{item.name}</TableCell><TableCell className="text-right">{item.value}</TableCell></TableRow>)}</TableBody></Table></div></>) : (<div className="flex items-center justify-center h-[350px]"><p className="text-muted-foreground">No livestock data available.</p></div>)}
                     </CardContent>
                 </Card>
 
